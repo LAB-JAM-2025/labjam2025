@@ -6,6 +6,10 @@ public class CharacterControllerWithCamera : MonoBehaviour
     Rigidbody rb;
     Transform feedCamera;
 
+
+public float rotationSmoothSpeed = 5f;
+private Quaternion targetRotation;
+
     [SerializeField] float cameraSpeed = 5f;
 
     void Start()
