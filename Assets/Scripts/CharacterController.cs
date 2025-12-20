@@ -11,6 +11,10 @@ public class CharacterControllerWithCamera : MonoBehaviour
 public float rotationSmoothSpeed = 5f;
 private Quaternion targetRotation;
 
+
+public float rotationSmoothSpeed = 5f;
+private Quaternion targetRotation;
+
     [SerializeField] float cameraSpeed = 5f;
 
     void Start()
