@@ -30,8 +30,8 @@ public class BulletSpawner : MonoBehaviour
                 newBullet.transform.rotation = parentTf.rotation;
                 newBullet.transform.Translate(bulletPos, Space.Self);
 
-                Rigidbody rb = newBullet.GetComponent<Rigidbody>();
-                rb.linearVelocity = transform.forward.normalized * bulletSpeed;
+                //Rigidbody rb = newBullet.GetComponent<Rigidbody>();
+                //rb.linearVelocity = transform.forward.normalized * bulletSpeed;
             }
         }
     }
