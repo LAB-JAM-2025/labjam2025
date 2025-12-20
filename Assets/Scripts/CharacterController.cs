@@ -24,7 +24,7 @@ public class CharacterControllerWithCamera : MonoBehaviour
     void FixedUpdate()
     {
         MoveCharacter();
-        //MoveFeedCameraXZ();
+        MoveFeedCameraXZ();
     }
 
     void MoveCharacter()
