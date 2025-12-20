@@ -1,6 +1,4 @@
-using System.Security.Cryptography;
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class Enemy : MonoBehaviour
 {

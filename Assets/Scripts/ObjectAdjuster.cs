@@ -1,5 +1,4 @@
 using UnityEngine;
-using static UnityEditor.PlayerSettings;
 
 public class Adjuster : MonoBehaviour
 {
@@ -31,8 +30,8 @@ public class Adjuster : MonoBehaviour
 
             if (gameObject.tag == "Player") // DISABLED
             {
-                //float yaw = Input.GetAxis("Mouse X") * rotationSpeed;
-                //adjustRotation(normal, yaw);
+                float yaw = Input.GetAxis("Mouse X") * rotationSpeed;
+                adjustRotation(normal, yaw);
             }
             else if(gameObject.tag == "Enemy")
             {

@@ -5,11 +5,6 @@ public class CharacterControllerWithCamera : MonoBehaviour
     [SerializeField] float speed = 2f;
     Rigidbody rb;
     Transform feedCamera;
-    GameObject character;
-
-
-public float rotationSmoothSpeed = 5f;
-private Quaternion targetRotation;
 
     [SerializeField] float cameraSpeed = 5f;
 
@@ -18,22 +13,13 @@ private Quaternion targetRotation;
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
         feedCamera = GameObject.Find("FeedCamera").transform;
-        character = GameObject.Find("Gurl");
-
-        targetRotation = character.transform.rotation;
-        
     }
 
     void FixedUpdate()
     {
         MoveCharacter();
         MoveFeedCameraXZ();
-        //smooth transition between rotations
-        character.transform.rotation = Quaternion.Slerp(character.transform.rotation,  targetRotation, rotationSmoothSpeed * Time.fixedDeltaTime);
-
     }
-
-    
 
     void MoveCharacter()
     {
@@ -57,14 +43,8 @@ private Quaternion targetRotation;
             {
                 moveDir = moveDir.normalized;
                 move(moveDir, normal);
-                RotateCharacter(moveDir);
             }
         }
-    }
-    void RotateCharacter(Vector3 normal)
-    {
-        targetRotation = Quaternion.LookRotation(normal, transform.up);
-        
     }
 
     void MoveFeedCameraXZ()
@@ -83,7 +63,7 @@ private Quaternion targetRotation;
         camMove = camMove.normalized * cameraSpeed * Time.fixedDeltaTime;
 
         // Move camera in world XZ plane
-        feedCamera.position += new Vector3(camMove.x, 0, -camMove.z);//it was easier to invert z here then rotate everything lmao
+        feedCamera.position += new Vector3(camMove.x, 0, -camMove.z); //it was easier to invert z here then rotate everything lmao
     }
 
     void move(Vector3 move, Vector3 normal)
