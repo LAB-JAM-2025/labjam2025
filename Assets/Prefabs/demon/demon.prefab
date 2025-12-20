@@ -809,6 +809,8 @@ GameObject:
   - component: {fileID: 4443262319833379370}
   - component: {fileID: 958660317129598891}
   - component: {fileID: 3768092623332593744}
+  - component: {fileID: 8746504111817850590}
+  - component: {fileID: 4024314975188233652}
   m_Layer: 0
   m_Name: demon
   m_TagString: Enemy
@@ -895,6 +897,43 @@ MonoBehaviour:
   bullet: {fileID: 5635120457256758434, guid: c99623e66524ff449be7f9eab1643ecb, type: 3}
   positions:
   - {fileID: 8471046917211985733, guid: aff7278b755be2643825544b3c075fa3, type: 3}
+--- !u!114 &8746504111817850590
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070179838287115855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e3485745e4f75e4e9f7d31ccb6c08de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  hpMax: 80
+  hp: 0
+--- !u!136 &4024314975188233652
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5070179838287115855}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.73377323
+  m_Height: 1.9772525
+  m_Direction: 1
+  m_Center: {x: 0.0045409203, y: 1.526922, z: 0}
 --- !u!1 &5680938705841000860
 GameObject:
   m_ObjectHideFlags: 0

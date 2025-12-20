@@ -29,6 +29,7 @@ public class BulletSpawner : MonoBehaviour
                 newBullet.transform.position = parentTf.position;
                 newBullet.transform.rotation = parentTf.rotation;
                 newBullet.transform.Translate(bulletPos, Space.Self);
+                newBullet.tag = "EnemyBullet";
             }
         }
     }
