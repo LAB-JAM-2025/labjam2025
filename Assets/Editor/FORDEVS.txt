@@ -1,0 +1,5 @@
+idk if scene saves project setting(prob not) so here's how to make shit work
+1. load scene "v1"
+2.add layer PlaneTexture -> assign it to Plane
+3. add layer Sphere -> assign to Sphere
+and it probably should work(I hope at least)
