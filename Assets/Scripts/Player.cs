@@ -17,6 +17,7 @@ public class Player : MonoBehaviour
         if(hp == 0)
         {
             Time.timeScale = 0;
+            SoundManager.instance.StopMusic();
             /// TODO: defeat screen
         }
     }

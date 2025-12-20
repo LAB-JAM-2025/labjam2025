@@ -26,6 +26,7 @@ public class BulletSpawner : MonoBehaviour
                 Vector3 bulletPos = t.position;
                 
                 GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                SoundManager.PlaySoundAtPosition(SoundType.PLAYER_BULLET, parentTf.position);
                 newBullet.transform.position = parentTf.position;
                 newBullet.transform.rotation = parentTf.rotation;
                 newBullet.transform.Translate(bulletPos, Space.Self);
