@@ -2,15 +2,11 @@ using UnityEngine;
 
 public class CharacterControllerWithCamera : MonoBehaviour
 {
-    public float speed;
-    public float mouse_sensitivity;
+    [SerializeField] float speed = 2f;
     Rigidbody rb;
     Transform feedCamera;
 
-    public float cameraSpeed = 5f;
-    public float cameraMouseSensitivity = 2f;
-
-    public float distanceFromSphere = 1f;
+    [SerializeField] float cameraSpeed = 5f;
 
     void Start()
     {

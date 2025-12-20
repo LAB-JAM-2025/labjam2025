@@ -5,13 +5,14 @@ public class Adjuster : MonoBehaviour
 {
     Rigidbody rb;
     public float rotationSpeed;
-    public GameObject sphere;
+    GameObject sphere;
     public float distanceFromSphere;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        sphere = GameObject.FindGameObjectWithTag("Sphere");
     }
 
     // Update is called once per frame
