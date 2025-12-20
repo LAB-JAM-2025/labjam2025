@@ -6,15 +6,17 @@ public class CharacterControllerWithCamera : MonoBehaviour
     Rigidbody rb;
     Transform feedCamera;
 
-
-public float rotationSmoothSpeed = 5f;
-private Quaternion targetRotation;
+    public float rotationSmoothSpeed = 5f;
+    private Quaternion targetRotation;
 
     [SerializeField] float cameraSpeed = 5f;
+
+    Animator animator;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        animator = GetComponent<Animator>();
         rb.useGravity = false;
         feedCamera = GameObject.Find("FeedCamera").transform;
     }
@@ -45,9 +47,12 @@ private Quaternion targetRotation;
 
             if (moveDir != Vector3.zero)
             {
+                animator.SetBool("Running", true);
                 moveDir = moveDir.normalized;
                 move(moveDir, normal);
+                return;
             }
+            animator.SetBool("Running", false);
         }
     }
 

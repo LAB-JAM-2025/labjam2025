@@ -669,7 +669,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c281d87b07f014d982d10aec6e6ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BackgroundChanger
-  sphereMaterial: {fileID: 0}
+  sphereMaterial: {fileID: 2100000, guid: 904313ee5f8caa44885f1cb4afd4daf1, type: 2}
   blueSky: {fileID: 2100000, guid: ff71a0d23c58b1249a3e1ceb835b5a40, type: 2}
   redSky: {fileID: 2100000, guid: 6a9c82d05cf4e7242b3f6d6ba6959f3c, type: 2}
   darkSky: {fileID: 2100000, guid: 5c08896a739c50a468e677929924abf9, type: 2}
@@ -1127,7 +1127,7 @@ Transform:
   m_GameObject: {fileID: 919132148424913372}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: 7.49, z: 0}
+  m_LocalPosition: {x: -0, y: 5.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1216,9 +1216,10 @@ GameObject:
   - component: {fileID: 919132148424913375}
   - component: {fileID: 919132148424913374}
   - component: {fileID: 919132148424913373}
+  - component: {fileID: 919132148424913377}
   m_Layer: 0
   m_Name: Gurl
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1286,6 +1287,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   speed: 1
+  rotationSmoothSpeed: 5
   cameraSpeed: 1
 --- !u!114 &919132148424913376
 MonoBehaviour:
@@ -1301,6 +1303,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Adjuster
   rotationSpeed: 1
   distanceFromSphere: 1
+--- !u!114 &919132148424913377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 919132148424913372}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93ff97844a4751f4c86f4d0df431dbfc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Player
+  hpMax: 100
+  hp: 0
 --- !u!1 &1069904014052362070
 GameObject:
   m_ObjectHideFlags: 0
