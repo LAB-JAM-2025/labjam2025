@@ -24,15 +24,16 @@ public class EnemySpawner : MonoBehaviour
     {
         if(spawnTimer.update())
         {
-            Debug.Log("Hit update");
             Vector3 enemyPos = pos + radius;
             float angleX = Random.Range(0, 360);
             float angleY = Random.Range(0, 360);
             float angleZ = Random.Range(0, 360);
             enemyPos.Set(enemyPos.x * Mathf.Sin(angleX), enemyPos.y * Mathf.Sin(angleY), enemyPos.z * Mathf.Sin(angleZ));
 
+            Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
+
             GameObject enemy = enemies[Random.Range(0, enemies.Length)];
-            Instantiate(enemy, enemyPos, Quaternion.identity);
+            Instantiate(enemy, enemyPos, rotation);
         }
     }
 }

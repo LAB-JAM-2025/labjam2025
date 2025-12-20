@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class CharacterControllerWithCamera : MonoBehaviour
 {
-    public float speed;
-    public float mouse_sensitivity;
+    [SerializeField] float speed = 2f;
     Rigidbody rb;
     Transform feedCamera;
     GameObject character;
@@ -12,10 +11,11 @@ public class CharacterControllerWithCamera : MonoBehaviour
 public float rotationSmoothSpeed = 5f;
 private Quaternion targetRotation;
 
-    public float cameraSpeed = 5f;
-    public float cameraMouseSensitivity = 2f;
 
-    public float distanceFromSphere = 1f;
+public float rotationSmoothSpeed = 5f;
+private Quaternion targetRotation;
+
+    [SerializeField] float cameraSpeed = 5f;
 
     void Start()
     {

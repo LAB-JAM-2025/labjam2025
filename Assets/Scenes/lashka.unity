@@ -245,9 +245,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemies:
-  - {fileID: 2089749943}
+  - {fileID: 5070179838287115855, guid: 78687ccf07a6028489ca9a64ae9067d5, type: 3}
   spawnInterval: 3
-  distanceFromSphere: 1
+  distanceFromSphere: 0.5
 --- !u!1 &255904230
 GameObject:
   m_ObjectHideFlags: 0
@@ -675,10 +675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   speed: 1
-  mouse_sensitivity: 1
   cameraSpeed: 1
-  cameraMouseSensitivity: 2
-  distanceFromSphere: 1
 --- !u!54 &1291343379
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -702,7 +699,7 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -816,7 +813,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Adjuster
   rotationSpeed: 1
-  sphere: {fileID: 1923213337}
   distanceFromSphere: 1
 --- !u!1 &1587249907
 GameObject:
@@ -1133,7 +1129,7 @@ GameObject:
   - component: {fileID: 1923213339}
   m_Layer: 3
   m_Name: Sphere
-  m_TagString: Untagged
+  m_TagString: Sphere
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1243,8 +1239,8 @@ GameObject:
   - component: {fileID: 2089749946}
   - component: {fileID: 2089749945}
   - component: {fileID: 2089749944}
-  - component: {fileID: 2089749948}
   - component: {fileID: 2089749949}
+  - component: {fileID: 2089749950}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -1345,21 +1341,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2089749948
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2089749943}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aaa3b58fc6a36fb40a68e5aad94360a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Adjuster
-  rotationSpeed: 1
-  sphere: {fileID: 1923213337}
-  distanceFromSphere: 1
 --- !u!54 &2089749949
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1387,6 +1368,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2089749950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2089749943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aaa3b58fc6a36fb40a68e5aad94360a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Adjuster
+  rotationSpeed: 1
+  distanceFromSphere: 1
 --- !u!1 &2097147401
 GameObject:
   m_ObjectHideFlags: 0

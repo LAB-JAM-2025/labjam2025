@@ -8,6 +8,7 @@
   - Layers:
     - Default, TransparentFX, Ignore Raycast, Sphere, Water, UI, PlaneTexture
 - Active game object:
+  - Name: Gurl
   - Name: FeedCamera
   - Tag: Untagged
   - Layer: Default
