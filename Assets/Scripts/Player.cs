@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     {
         hp = hpMax;
         Cursor.lockState = CursorLockMode.Confined;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame
