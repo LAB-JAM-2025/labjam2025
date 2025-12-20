@@ -892,7 +892,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BulletSpawner
   bulletSpeed: 2
   bulletInterval: 0.5
-  bullet: {fileID: 5635120457256758434, guid: c99623e66524ff449be7f9eab1643ecb, type: 3}
+  bullet: {fileID: 5635120457256758434, guid: 015ed72ee9c440d4dbb0b9c77b94400d, type: 3}
   positions:
   - {fileID: 8471046917211985733, guid: aff7278b755be2643825544b3c075fa3, type: 3}
 --- !u!1 &5680938705841000860
