@@ -6,6 +6,11 @@ public class CharacterControllerWithCamera : MonoBehaviour
     public float mouse_sensitivity;
     Rigidbody rb;
     Transform feedCamera;
+    GameObject character;
+
+
+public float rotationSmoothSpeed = 5f;
+private Quaternion targetRotation;
 
     public float cameraSpeed = 5f;
     public float cameraMouseSensitivity = 2f;
@@ -15,13 +20,22 @@ public class CharacterControllerWithCamera : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         rb.useGravity = false;
         feedCamera = GameObject.Find("FeedCamera").transform;
+        character = GameObject.Find("Gurl");
+
+        targetRotation = character.transform.rotation;
+        
     }
 
     void FixedUpdate()
     {
         MoveCharacter();
         MoveFeedCameraXZ();
+        //smooth transition between rotations
+        character.transform.rotation = Quaternion.Slerp(character.transform.rotation,  targetRotation, rotationSmoothSpeed * Time.fixedDeltaTime);
+
     }
+
+    
 
     void MoveCharacter()
     {
@@ -49,6 +63,7 @@ public class CharacterControllerWithCamera : MonoBehaviour
             {
                 moveDir = moveDir.normalized;
                 move(moveDir, normal);
+                RotateCharacter(moveDir);
             }
 
             // Ensure character stays on sphere surface
@@ -57,6 +72,11 @@ public class CharacterControllerWithCamera : MonoBehaviour
                 rb.position = surfaceHit.point;
             }
         }
+    }
+    void RotateCharacter(Vector3 normal)
+    {
+        targetRotation = Quaternion.LookRotation(normal, transform.up);
+        
     }
 
     void MoveFeedCameraXZ()

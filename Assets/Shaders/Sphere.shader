@@ -4,7 +4,7 @@ Shader "Custom/SphereCameraFisheye"
     {
         _MainTex ("Camera Feed", 2D) = "black" {}
         _Distortion ("Fisheye Strength", Range(-0.5,0)) = -0.5 //-0.5< goes crazy ... positive does nothing, then breaks 
-        _Vignette ("Vignette Strength", Range(0,10)) = 0.3
+        
     }
     SubShader
     {
@@ -21,6 +21,7 @@ Shader "Custom/SphereCameraFisheye"
 
             sampler2D _MainTex;
             float _Distortion;
+            float4 _BgColor;
             struct appdata
             {
                 float4 vertex : POSITION;
@@ -64,7 +65,8 @@ Shader "Custom/SphereCameraFisheye"
                     cUV_aspect.x = rDist * cos(theta);
                     cUV_aspect.y = rDist * sin(theta);
                 }
-
+                
+                
                 // Convert back to normalized coordinates
                 cUV.x = cUV_aspect.x / aspect;
                 cUV.y = cUV_aspect.y;
@@ -74,6 +76,10 @@ Shader "Custom/SphereCameraFisheye"
                 // Sample texture
                 fixed4 col = tex2D(_MainTex, uv);
 
+
+                col.rgb -= 1.0 - smoothstep(0.3, 0.5, 1-r); 
+                col.rgb = (_BgColor.rgb + col.rgb/2);
+                return fixed4(col.rgb, col.a);
 
                 return col;
             }

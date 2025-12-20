@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class BackgroundChanger : MonoBehaviour
 {
+    public Material sphereMaterial;
+
     [Header("Skyboxes")]
     public Material blueSky;
     public Material redSky;
@@ -15,12 +17,19 @@ public class BackgroundChanger : MonoBehaviour
     [Header("Fog Density")]
     public float fogDensity = 0.01f;
 
+    void Start()
+    {
+        // Set a default background
+        SetBlueBackground();
+    }
+
     public void SetBlueBackground()
     {
         RenderSettings.skybox = blueSky;
         RenderSettings.fog = true;
         RenderSettings.fogColor = blueFog;
         RenderSettings.fogDensity = fogDensity;
+        sphereMaterial.SetColor("_BgColor", blueFog);
         DynamicGI.UpdateEnvironment(); 
     }
 
@@ -30,6 +39,8 @@ public class BackgroundChanger : MonoBehaviour
         RenderSettings.fog = true;
         RenderSettings.fogColor = redFog;
         RenderSettings.fogDensity = fogDensity;
+        sphereMaterial.SetColor("_BgColor", redFog);
+
         DynamicGI.UpdateEnvironment();
     }
 
@@ -39,6 +50,7 @@ public class BackgroundChanger : MonoBehaviour
         RenderSettings.fog = true;
         RenderSettings.fogColor = darkFog;
         RenderSettings.fogDensity = fogDensity;
+        sphereMaterial.SetColor("_BgColor", darkFog);
         DynamicGI.UpdateEnvironment();
     }
 }
