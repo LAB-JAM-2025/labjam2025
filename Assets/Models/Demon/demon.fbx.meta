@@ -3,7 +3,32 @@ guid: 374c14e7f6d283b4d8a5756a24619247
 ModelImporter:
   serializedVersion: 24200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Face
+    second: {fileID: 2100000, guid: 3173166b7024243899499e12e9c29176, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: body
+    second: {fileID: 2100000, guid: ca9470cae1783e60787ebd3b9044b7d7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: flames
+    second: {fileID: 2100000, guid: 95fe069b6bb52fbfa95e2266cbe92838, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: hand
+    second: {fileID: 2100000, guid: 411dd8bbeb6a1d043af5864f7e73ffa4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: small-flames
+    second: {fileID: 2100000, guid: 89273193db96ca2799fe98c40b243642, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
