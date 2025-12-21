@@ -6,6 +6,9 @@ public class Player : MonoBehaviour
     [SerializeField] int hpMax;
     [SerializeField] int hp;
     [SerializeField] GameObject bullet;
+    [SerializeField] float attackInterval = 0.25f;
+    bool canShoot = true;
+    Timer shootTimer;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,6 +16,7 @@ public class Player : MonoBehaviour
         hp = hpMax;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
+        shootTimer = new Timer(attackInterval);
     }
 
     // Update is called once per frame
@@ -24,11 +28,16 @@ public class Player : MonoBehaviour
             SoundManager.instance.StopMusic();
             /// TODO: defeat screen
         }
-    }
 
-    private void FixedUpdate()
-    {
-        if (Input.GetMouseButtonDown(0))
+        if(!canShoot)
+        {
+            if(shootTimer.update())
+            {
+                canShoot = true;
+            }
+        }
+
+        if (Input.GetMouseButton(0) && canShoot)
         {
             Vector3 pos = transform.position;
             Vector3 fwd = transform.forward;
@@ -39,7 +48,13 @@ public class Player : MonoBehaviour
             Rigidbody rb = newBullet.GetComponent<Rigidbody>();
             Bullet b = newBullet.GetComponent<Bullet>();
             rb.linearVelocity = newBullet.transform.forward * b.getSpeed();
+            canShoot = false;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 
     public void changeHP(int value)

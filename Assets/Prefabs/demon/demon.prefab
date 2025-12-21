@@ -893,10 +893,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletSpawner
   bulletSpeed: 2
-  bulletInterval: 0.5
-  bullet: {fileID: 5635120457256758434, guid: c99623e66524ff449be7f9eab1643ecb, type: 3}
+  bulletInterval: 1.25
+  bullet: {fileID: 6961223166970157752, guid: 215ecec018902e64eb3e74759cf28e2e, type: 3}
   positions:
   - {fileID: 8471046917211985733, guid: aff7278b755be2643825544b3c075fa3, type: 3}
+  - {fileID: 4507997079608959432, guid: 4d11da65d3e0790489c3af55f0771f72, type: 3}
+  - {fileID: 652802298813241042, guid: a14166087fe234a4db452696bb5fbe36, type: 3}
 --- !u!114 &8746504111817850590
 MonoBehaviour:
   m_ObjectHideFlags: 0

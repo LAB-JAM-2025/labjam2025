@@ -29,7 +29,6 @@ public class Bullet : MonoBehaviour
     {
         if(other.tag == "Player" && tag == "EnemyBullet")
         {
-            Debug.Log("Hit player");
             GameObject player = other.gameObject;
             Player playerScript = player.GetComponent<Player>();
             playerScript.changeHP(-damage);
@@ -41,10 +40,15 @@ public class Bullet : MonoBehaviour
         }
         else if(other.tag == "Enemy" && tag == "PlayerBullet")
         {
-            Debug.Log("Hit enemy");
             GameObject enemy = other.gameObject;
             Enemy enemyScript = enemy.GetComponent<Enemy>(); 
             enemyScript.changeHP(-damage);
+            Destroy(gameObject);
+        }
+        else if (other.tag == "EnemyBullet" && tag == "PlayerBullet")
+        {
+            GameObject bullet = other.gameObject;
+            Destroy(bullet);
             Destroy(gameObject);
         }
     }
