@@ -2,6 +2,7 @@ using UnityEngine;
 using System;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 public class KillCounter : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI killCountText;
@@ -29,7 +30,7 @@ public class KillCounter : MonoBehaviour
         }
         else if (killCount == 60)
         {
-            //EndGame();
+            //SceneManager.LoadScene("EndGame");
         }
     }
 
