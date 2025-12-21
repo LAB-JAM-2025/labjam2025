@@ -111,6 +111,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   hpMax: 2
   hp: 0
+  healthPack: {fileID: 7904484156050377605, guid: ccf5c4b93ccd8ad4781f9fa2b939fdef, type: 3}
 --- !u!136 &4024314975188233652
 CapsuleCollider:
   m_ObjectHideFlags: 0
