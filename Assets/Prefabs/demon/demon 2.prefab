@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 8746504111817850590}
   - component: {fileID: 4024314975188233652}
   m_Layer: 7
-  m_Name: demon
+  m_Name: demon 2
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77,7 +77,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Adjuster
   rotationSpeed: 1
-  distanceFromSphere: 0.75
+  distanceFromSphere: 0.5
 --- !u!114 &3768092623332593744
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -90,8 +90,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 999937a19a9d46e4195fdc8848fafac7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletSpawner
-  bulletSpeed: 1.5
-  bulletInterval: 2
+  bulletSpeed: 2
+  bulletInterval: 1.25
   bullet: {fileID: 6961223166970157752, guid: 215ecec018902e64eb3e74759cf28e2e, type: 3}
   positions:
   - {fileID: 8471046917211985733, guid: aff7278b755be2643825544b3c075fa3, type: 3}
@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3485745e4f75e4e9f7d31ccb6c08de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hpMax: 15
+  hpMax: 35
   hp: 0
   healthPack: {fileID: 6639677708738543682, guid: 0ed4b1caebdf6f34eb6c312416a9a7be, type: 3}
 --- !u!136 &4024314975188233652

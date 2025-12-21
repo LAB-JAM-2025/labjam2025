@@ -246,6 +246,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemies:
   - {fileID: 5070179838287115855, guid: 78687ccf07a6028489ca9a64ae9067d5, type: 3}
+  - {fileID: 5070179838287115855, guid: d670631f3c37b5d498d6574c5de9951a, type: 3}
+  - {fileID: 5070179838287115855, guid: 774b9a3f32da61743a673dce962a88ba, type: 3}
   spawnInterval: 1
   player: {fileID: 1007129197}
   spawnRadius: 8
