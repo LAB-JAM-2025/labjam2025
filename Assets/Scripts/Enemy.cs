@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
 
     public static event Action OnEnemyKilled;
     public event Action OnDeath;
+    EnemySpawner enemySpawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -19,6 +20,9 @@ public class Enemy : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
         spawner = GetComponent<BulletSpawner>();
         spawner.enabled = false;
+
+        GameObject spawnSphere = GameObject.Find("SpawnSphere");
+        enemySpawner = spawnSphere.GetComponent<EnemySpawner>();
     }
 
     // Update is called once per frame
@@ -26,6 +30,7 @@ public class Enemy : MonoBehaviour
     {
         if (hp == 0)
         {
+            enemySpawner.OnEnemyDeath();
             Destroy(gameObject);
         }
     }

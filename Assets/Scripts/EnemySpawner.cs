@@ -37,6 +37,14 @@ public class EnemySpawner : MonoBehaviour
         Vector3 randomDir = Random.onUnitSphere;
         Vector3 spawnPos = player.position + randomDir * spawnRadius;
 
+        float checkColRadius = 0.5f;
+        Collider[] hitColliders = Physics.OverlapSphere(spawnPos, checkColRadius);
+        if (hitColliders.Length > 0)
+        {
+            SpawnEnemy();
+            return;
+        }
+
         int enemyIndex = Random.Range(0, enemies.Length);
 
         // Face enemy toward player
@@ -46,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
         currentEnemies++;
     }
 
-    void OnEnemyDeath()
+    public void OnEnemyDeath()
     {
         currentEnemies--;
     }
