@@ -36,6 +36,7 @@ public class Player : MonoBehaviour
         if(hp == 0)
         {
             Time.timeScale = 0;
+            SoundManager.PlaySoundAtPosition(SoundType.PLAYER_DESTROYED, transform.position);
             SoundManager.instance.StopMusic(); 
             screen.SetActive(true);
             Cursor.visible = true;
@@ -56,6 +57,7 @@ public class Player : MonoBehaviour
             Vector3 spawnPos = pos + fwd;
 
             GameObject newBullet = Instantiate(bullet, spawnPos, transform.rotation);
+            SoundManager.PlaySoundAtPosition(SoundType.PLAYER_BULLET, transform.position);
             newBullet.tag = "PlayerBullet";
             Rigidbody rb = newBullet.GetComponent<Rigidbody>();
             Bullet b = newBullet.GetComponent<Bullet>();

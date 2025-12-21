@@ -68,6 +68,8 @@ public class Enemy : MonoBehaviour
             if (UnityEngine.Random.Range(0, 101) <= 25)
                 Instantiate(healthPack, transform.position, transform.rotation);
 
+            SoundManager.PlaySoundAtPosition(SoundType.ENEMY_DESTROYED, transform.position);
+
             OnEnemyKilled?.Invoke();
             OnDeath?.Invoke();
             enemySpawner.OnEnemyDeath();
