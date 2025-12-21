@@ -9,9 +9,14 @@ public class KillCounter : MonoBehaviour
     [SerializeField] private Image ProgressBar;
     public int killCount = 0;
     public static event Action<int> OnSwitchWave;
+
+    [SerializeField] GameObject sceneAnim;
+    SceneChanger changer;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        changer = sceneAnim.GetComponent<SceneChanger>();
     }
 
     // Update is called once per frame
@@ -30,7 +35,7 @@ public class KillCounter : MonoBehaviour
         }
         else if (killCount == 60)
         {
-            //SceneManager.LoadScene("EndGame");
+            changer.LoadLevel("EndGame");
         }
     }
 

@@ -1092,6 +1092,7 @@ MonoBehaviour:
   killCountText: {fileID: 1467649342}
   ProgressBar: {fileID: 1696771959}
   killCount: 0
+  sceneAnim: {fileID: 1702337210}
 --- !u!1 &1057733304
 GameObject:
   m_ObjectHideFlags: 0
@@ -1469,6 +1470,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f98d0d64838bb9d46ba5baf03394b877, type: 3}
+--- !u!1 &1702337210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4263846430651979230, guid: f98d0d64838bb9d46ba5baf03394b877, type: 3}
+  m_PrefabInstance: {fileID: 1702337209}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1923213337
 GameObject:
   m_ObjectHideFlags: 0

@@ -12,7 +12,7 @@ public class MainMenuScript : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("lashka");
+        SceneManager.LoadScene("Intro");
     }
 
     public void QuitGame()
