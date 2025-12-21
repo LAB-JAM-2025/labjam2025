@@ -29,7 +29,7 @@ public class BulletSpawner : MonoBehaviour
                 SoundManager.PlaySoundAtPosition(SoundType.PLAYER_BULLET, parentTf.position);
                 newBullet.transform.position = parentTf.position;
                 newBullet.transform.rotation = parentTf.rotation;
-                newBullet.transform.Translate(bulletPos, Space.Self);
+                //newBullet.transform.Translate(bulletPos, Space.Self);
                 newBullet.tag = "EnemyBullet";
             }
         }

@@ -32,7 +32,7 @@ public class Player : MonoBehaviour
         {
             Vector3 pos = transform.position;
             Vector3 fwd = transform.forward;
-            Vector3 spawnPos = pos + (pos * 1.5f);
+            Vector3 spawnPos = pos + fwd;
 
             GameObject newBullet = Instantiate(bullet, spawnPos, transform.rotation);
             newBullet.tag = "PlayerBullet";

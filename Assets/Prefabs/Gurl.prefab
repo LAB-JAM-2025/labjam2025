@@ -792,8 +792,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
   speed: 1
+  mouse_sensitivity: 0
   rotationSmoothSpeed: 5
   cameraSpeed: 1
+  cameraMouseSensitivity: 2
 --- !u!114 &8525715956313663858
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -808,7 +810,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Player
   hpMax: 100
   hp: 0
-  bullet: {fileID: 5635120457256758434, guid: c99623e66524ff449be7f9eab1643ecb, type: 3}
+  bullet: {fileID: 6321993304753257844, guid: c238e82e73a7a6742a18119b242c3d6a, type: 3}
 --- !u!54 &1089265362649216619
 Rigidbody:
   m_ObjectHideFlags: 0

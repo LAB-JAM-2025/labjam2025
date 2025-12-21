@@ -4,11 +4,15 @@ public class Enemy : MonoBehaviour
 {
     [SerializeField] int hpMax;
     public int hp;
+    GameObject sphere;
+    GameObject player;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         hp = hpMax;
+        sphere = GameObject.FindGameObjectWithTag("Sphere");
+        player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -17,6 +21,24 @@ public class Enemy : MonoBehaviour
         if (hp == 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    private void FixedUpdate()
+    {
+
+        Vector3 fromSphere = transform.position - sphere.transform.position;
+        fromSphere.Normalize();
+
+        Vector3 toPlayer = transform.position - player.transform.position;
+
+        Vector3 projection = -Vector3.ProjectOnPlane(toPlayer, fromSphere).normalized;
+
+        if (projection != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(projection, fromSphere);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
         }
     }
 
