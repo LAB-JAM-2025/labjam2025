@@ -6,11 +6,13 @@ public class MainMenuScript : MonoBehaviour
 {
     
     [SerializeField]
-    private GameObject creditsPanel;
+    private GameObject credits;
+    public GameObject main;
+    public GameObject gurl;
 
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene("lashka");
     }
 
     public void QuitGame()
@@ -20,14 +22,17 @@ public class MainMenuScript : MonoBehaviour
 
     public void CreditsOn()
     {
-        creditsPanel.SetActive(true);
+        credits.SetActive(true);
+        gurl.SetActive(false);
+        main.SetActive(false);
     }
 
     public void CreditsOff()
     {
-        creditsPanel.SetActive(false);
+        credits.SetActive(false);
+        gurl.SetActive(true);
+        main.SetActive(true);
     }
-    
     
 
 }
