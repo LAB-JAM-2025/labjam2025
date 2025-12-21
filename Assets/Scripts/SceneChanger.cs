@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 public class SceneChanger : MonoBehaviour
 {
     public static SceneChanger instance;
-    [SerializeField] Animator transitionAnim;
+    [SerializeField] Animator transitionAnimScene;
+    [SerializeField] Animator transitionAnimHUD;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private void Awake()
@@ -23,7 +24,6 @@ public class SceneChanger : MonoBehaviour
 
     void Start()
     {
-        
     }
 
     public void NextLevel()
@@ -38,10 +38,10 @@ public class SceneChanger : MonoBehaviour
 
     IEnumerator LoadLevel()
     {
-        transitionAnim.SetTrigger("End");
+        transitionAnimScene.SetTrigger("End");
         yield return new WaitForSeconds(1);
         SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
-        transitionAnim.SetTrigger("Start");
+        transitionAnimScene.SetTrigger("Start");
     }
 
     // Update is called once per frame
