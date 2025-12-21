@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2519765768750131509}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Armature
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -48,7 +48,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8402920897851619022}
   - component: {fileID: 9090250986998557392}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: hands
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2286096858442632595}
   - component: {fileID: 1911356310908761882}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -253,7 +253,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9023773924007095565}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.005_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3939512626348541881}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -316,7 +316,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8125082764857222570}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.006_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -347,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1595735339919865408}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2357404156227229998}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.001_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +410,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1602453293802818616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -443,7 +443,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2946267584639040319}
   - component: {fileID: 3808970948741205709}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -545,7 +545,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8226109631572277061}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Empty
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -576,7 +576,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8877798611366782689}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shoulder.R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -608,7 +608,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6495085961796151496}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -639,7 +639,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4868069812740097057}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: shoulder.L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -671,7 +671,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 898916673907498187}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: upper_tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -704,7 +704,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8987361392969175875}
   - component: {fileID: 9167672883413398354}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: small_flames
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -811,7 +811,7 @@ GameObject:
   - component: {fileID: 3768092623332593744}
   - component: {fileID: 8746504111817850590}
   - component: {fileID: 4024314975188233652}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: demon
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3485745e4f75e4e9f7d31ccb6c08de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hpMax: 80
+  hpMax: 2
   hp: 0
 --- !u!136 &4024314975188233652
 CapsuleCollider:
@@ -930,10 +930,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1494477
-  m_Height: 2.2988954
+  m_Radius: 0.73377323
+  m_Height: 1.9772525
   m_Direction: 1
-  m_Center: {x: -0.016117334, y: 1.526922, z: 0.12148237}
+  m_Center: {x: 0.0045409203, y: 1.526922, z: 0}
 --- !u!1 &5680938705841000860
 GameObject:
   m_ObjectHideFlags: 0
@@ -943,7 +943,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5870744167964274001}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: arm.L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -975,7 +975,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8003371433610969930}
   - component: {fileID: 6848577615344887139}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: face
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1077,7 +1077,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4364516335923756766}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1109,7 +1109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2376634852084433498}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1141,7 +1141,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7965421696458438880}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1173,7 +1173,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 137213039837658012}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Bone.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1205,7 +1205,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 253657277271808036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1236,7 +1236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1178863035352622036}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: lower_tail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

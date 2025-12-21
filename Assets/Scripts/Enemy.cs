@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using System;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] int hpMax;
@@ -7,6 +7,9 @@ public class Enemy : MonoBehaviour
     GameObject sphere;
     GameObject player;
     BulletSpawner spawner;
+
+    public static event Action OnEnemyKilled;
+    public event Action OnDeath;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -52,11 +55,12 @@ public class Enemy : MonoBehaviour
 
     public void changeHP(int value)
     {
-        if (hp + value < 0)
-            hp = 0;
-        else if (hp + value > hpMax)
-            hp = hpMax;
-        else
-            hp += value;
+        hp = Mathf.Clamp(hp + value, 0, hpMax);
+        if (hp == 0)
+        {
+            OnEnemyKilled?.Invoke();
+            OnDeath?.Invoke();
+            Destroy(gameObject);
+        }
     }
 }

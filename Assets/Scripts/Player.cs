@@ -44,11 +44,6 @@ public class Player : MonoBehaviour
 
     public void changeHP(int value)
     {
-        if(hp + value < 0)
-            hp = 0;
-        else if (hp + value > hpMax) 
-            hp = hpMax;
-        else
-            hp += value;
+        hp = Mathf.Clamp(hp + value, 0, hpMax);
     }
 }
