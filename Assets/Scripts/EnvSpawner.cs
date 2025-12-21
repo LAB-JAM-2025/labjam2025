@@ -14,7 +14,7 @@ public class EnvSpawner : MonoBehaviour
     public float radius = 10f;
     public float ascendHeight = 2f;
     public float ascendTime = 0.5f;
-    public float objectScale = 0.01f;
+    public float objectScale = 0.02f;
 
     private List<GameObject> spawnedObjects = new List<GameObject>();
     void Start()

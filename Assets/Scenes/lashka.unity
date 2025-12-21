@@ -1562,7 +1562,7 @@ MonoBehaviour:
   radius: 10
   ascendHeight: 2
   ascendTime: 0.5
-  objectScale: 0.01
+  objectScale: 0.015
 --- !u!114 &1966926434 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5246406519019013323, guid: ccb3baa093c4ee940b0ee08dd1c9d085, type: 3}
