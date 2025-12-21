@@ -3,37 +3,51 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] public GameObject[] enemies;
+    [Header("Spawn Timing")]
     public float spawnInterval; // in seconds
-    public float distanceFromSphere;
-    Vector3 pos;
-    Vector3 radius;
+
+    [Header("Spawn Around Player")]
+    [SerializeField]public Transform player;
+    public float spawnRadius = 15f;
+
     Timer spawnTimer;
+    int currentEnemies = 0;
+    public int maxEnemies;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        Vector3 scaleRadius = transform.localScale / 2;
-        float dist = distanceFromSphere;
-        radius = new Vector3(scaleRadius.x + dist, scaleRadius.y + dist, scaleRadius.z + dist);
-        pos = transform.position;
+        maxEnemies = 20;
         spawnTimer = new Timer(spawnInterval);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(spawnTimer.update())
+        if (spawnTimer.update() && currentEnemies < maxEnemies)
         {
-            Vector3 enemyPos = pos + radius;
-            float angleX = Random.Range(0, 360);
-            float angleY = Random.Range(0, 360);
-            float angleZ = Random.Range(0, 360);
-            enemyPos.Set(enemyPos.x * Mathf.Sin(angleX), enemyPos.y * Mathf.Sin(angleY), enemyPos.z * Mathf.Sin(angleZ));
-
-            Quaternion rotation = Quaternion.Euler(angleX, angleY, angleZ);
-
-            GameObject enemy = enemies[Random.Range(0, enemies.Length)];
-            Instantiate(enemy, enemyPos, rotation);
+            SpawnEnemy();
         }
+    
+    }
+
+    void SpawnEnemy()
+    {
+        // Random direction around player
+        Vector3 randomDir = Random.onUnitSphere;
+        Vector3 spawnPos = player.position + randomDir * spawnRadius;
+
+        int enemyIndex = Random.Range(0, enemies.Length);
+
+        // Face enemy toward player
+        Quaternion rotation = Quaternion.LookRotation(player.position - spawnPos);
+
+        Instantiate(enemies[enemyIndex], spawnPos, rotation);
+        currentEnemies++;
+    }
+
+    void OnEnemyDeath()
+    {
+        currentEnemies--;
     }
 }

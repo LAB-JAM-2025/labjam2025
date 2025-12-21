@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3485745e4f75e4e9f7d31ccb6c08de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hpMax: 80
+  hpMax: 2
   hp: 0
 --- !u!136 &4024314975188233652
 CapsuleCollider:
@@ -930,10 +930,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.1494477
-  m_Height: 2.2988954
+  m_Radius: 0.73377323
+  m_Height: 1.9772525
   m_Direction: 1
-  m_Center: {x: -0.016117334, y: 1.526922, z: 0.12148237}
+  m_Center: {x: 0.0045409203, y: 1.526922, z: 0}
 --- !u!1 &5680938705841000860
 GameObject:
   m_ObjectHideFlags: 0

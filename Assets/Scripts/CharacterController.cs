@@ -61,16 +61,15 @@ public class CharacterControllerWithCamera : MonoBehaviour
 
             if (moveDir != Vector3.zero)
             {
-                animator.SetBool("Running", true);
+                //animator.SetBool("Running", true);
                 moveDir = moveDir.normalized;
                 move(moveDir, normal);
                 RotateCharacter(moveDir);
 
 
-            }
-            else
+            }else
             {
-                animator.SetBool("Running", false);
+            animator.SetBool("Running", false);
             }
             
 
