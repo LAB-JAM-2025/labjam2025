@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 10
   m_Fog: 1
-  m_FogColor: {r: 0, g: 0, b: 0, a: 1}
+  m_FogColor: {r: 0.33641866, g: 0.6792453, b: 0.6792453, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.3
   m_LinearFogStart: 0
@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 2100000, guid: 5c08896a739c50a468e677929924abf9, type: 2}
+  m_SkyboxMaterial: {fileID: 2100000, guid: ff71a0d23c58b1249a3e1ceb835b5a40, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -1054,10 +1054,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 854f9348d24982d4e9975a4dfd5ba4dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CharacterController
-  speed: 1
+  speed: 1.5
   mouse_sensitivity: 1
   rotationSmoothSpeed: 5
-  cameraSpeed: 1
+  cameraSpeed: 0.45
   cameraMouseSensitivity: 2
 --- !u!54 &1007129200
 Rigidbody:
@@ -1410,7 +1410,7 @@ MonoBehaviour:
   redSky: {fileID: 2100000, guid: 6a9c82d05cf4e7242b3f6d6ba6959f3c, type: 2}
   darkSky: {fileID: 2100000, guid: 5c08896a739c50a468e677929924abf9, type: 2}
   blueFog: {r: 0.33641866, g: 0.6792453, b: 0.6792453, a: 1}
-  redFog: {r: 0.745283, g: 0.33397114, b: 0.33397114, a: 1}
+  redFog: {r: 1, g: 0.20860678, b: 0.11764705, a: 1}
   darkFog: {r: 0, g: 0, b: 0, a: 1}
   fogDensity: 0.3
 --- !u!4 &1587249909
@@ -1440,6 +1440,7 @@ GameObject:
   - component: {fileID: 1923213341}
   - component: {fileID: 1923213340}
   - component: {fileID: 1923213339}
+  - component: {fileID: 1923213342}
   m_Layer: 3
   m_Name: Sphere
   m_TagString: Sphere
@@ -1540,6 +1541,26 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1923213337}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1923213342
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1923213337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 326e552c538e3f544a0b6e9413906389, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnvSpawner
+  treePrefab: {fileID: 3629457186530161778, guid: 47c53e8f67e2db24fbd39c3554884063, type: 3}
+  buildingPrefab: {fileID: 4147633317200877237, guid: b809e69c4189568459d1986ac4a9d9eb, type: 3}
+  volcanoPrefab: {fileID: 1116922692266661493, guid: ca038612d366c584599885315a2efa47, type: 3}
+  amount: 30
+  radius: 10
+  ascendHeight: 2
+  ascendTime: 0.5
+  objectScale: 0.01
 --- !u!114 &1966926434 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5246406519019013323, guid: ccb3baa093c4ee940b0ee08dd1c9d085, type: 3}

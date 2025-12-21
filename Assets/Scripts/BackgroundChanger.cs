@@ -38,10 +38,10 @@ public class BackgroundChanger : MonoBehaviour
         switch (waveNumber)
         {
             case 2:
-                SetRedBackground();
+                SetDarkBackground();
                 break;
             case 3:
-                SetDarkBackground();
+                SetRedBackground();
                 break;
             default:
                 Debug.Log("Unknown wave number!");

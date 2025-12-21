@@ -531,6 +531,7 @@ MonoBehaviour:
   bullet: {fileID: 6321993304753257844, guid: c238e82e73a7a6742a18119b242c3d6a, type: 3}
   attackInterval: 0.25
   hpBar: {fileID: 0}
+  screen: {fileID: 0}
 --- !u!1 &830362859
 GameObject:
   m_ObjectHideFlags: 0
@@ -1333,6 +1334,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1007129197}
     m_Modifications:
+    - target: {fileID: 219483567855548416, guid: 188c60c1f3dd4d246be635fa024cdf9c, type: 3}
+      propertyPath: 'soundList.Array.data[2]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 382961c590c0255498af2146a7ea9060, type: 3}
+    - target: {fileID: 219483567855548416, guid: 188c60c1f3dd4d246be635fa024cdf9c, type: 3}
+      propertyPath: 'soundList.Array.data[3]'
+      value: 
+      objectReference: {fileID: 8300000, guid: 6629e8e9bd1525f4c8b4e80f242e7d60, type: 3}
     - target: {fileID: 3620336545332329427, guid: 188c60c1f3dd4d246be635fa024cdf9c, type: 3}
       propertyPath: m_Enabled
       value: 1
