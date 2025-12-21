@@ -24,7 +24,7 @@ public class EnemySpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (spawnTimer.update() && currentEnemies <= maxEnemies)
+        if (spawnTimer.update() && currentEnemies < maxEnemies)
         {
             SpawnEnemy();
         }
@@ -56,6 +56,7 @@ public class EnemySpawner : MonoBehaviour
 
     public void OnEnemyDeath()
     {
+        Debug.Log("sosal");
         currentEnemies--;
     }
 }

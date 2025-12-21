@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class Player : MonoBehaviour
     [SerializeField] int hp;
     [SerializeField] GameObject bullet;
     [SerializeField] float attackInterval = 0.25f;
+    [SerializeField] private Image hpBar;
     bool canShoot = true;
     Timer shootTimer;
 
@@ -59,6 +61,9 @@ public class Player : MonoBehaviour
 
     public void changeHP(int value)
     {
+        Debug.Log("Player HP changed by " + hp);
         hp = Mathf.Clamp(hp + value, 0, hpMax);
+        if (hpBar != null)
+            hpBar.fillAmount = (float)hp / hpMax;
     }
 }

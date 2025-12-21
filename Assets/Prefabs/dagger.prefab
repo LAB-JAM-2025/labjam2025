@@ -231,7 +231,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 25
   speed: 5
-  TTL: 5
+  TTL: 2
 --- !u!114 &84872289607634864
 MonoBehaviour:
   m_ObjectHideFlags: 0
