@@ -11,6 +11,16 @@ public class Timer
         timePassed = 0;
     }
 
+    public void changeInterval(float newInterval)
+    {
+        interval = newInterval;
+    }
+
+    public float getInterval()
+    {
+        return interval;
+    }
+
     public bool update()
     {
         timePassed += Time.deltaTime;

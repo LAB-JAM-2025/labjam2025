@@ -20,15 +20,23 @@ public class BulletSpawner : MonoBehaviour
     {
         if (attackTimer.update())
         {
-            foreach (Transform t in positions)
-            {
-                Transform parentTf = transform;
-                Vector3 bulletPos = t.position;
+            Transform t = positions[Random.Range(0, positions.Length)];
+            Transform parentTf = transform;
+            Vector3 bulletPos = t.position;
                 
-                GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-                newBullet.transform.position = parentTf.position;
-                newBullet.transform.rotation = parentTf.rotation;
-                newBullet.transform.Translate(bulletPos, Space.Self);
+            GameObject newBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            SoundManager.PlaySoundAtPosition(SoundType.PLAYER_BULLET, parentTf.position);
+            newBullet.transform.position = parentTf.position;
+            newBullet.transform.rotation = parentTf.rotation;
+            //newBullet.transform.Translate(bulletPos, Space.Self);
+            newBullet.tag = "EnemyBullet";
+
+            if (Random.Range(0, 101) <= 10)
+            {
+                float delta = Random.Range(1, 51) / 100; // seconds
+                delta *= (Random.Range(0, 2) == 1) ? 1 : -1;
+
+                attackTimer.changeInterval(attackTimer.getInterval() + delta);
             }
         }
     }

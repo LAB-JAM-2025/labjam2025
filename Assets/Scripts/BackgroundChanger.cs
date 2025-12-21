@@ -23,6 +23,31 @@ public class BackgroundChanger : MonoBehaviour
         SetBlueBackground();
     }
 
+    void OnEnable()
+    {
+        KillCounter.OnSwitchWave += SwitchBackground;
+    }
+
+    void OnDisable()
+    {
+        KillCounter.OnSwitchWave -= SwitchBackground;
+    }
+
+    void SwitchBackground(int waveNumber)
+    {
+        switch (waveNumber)
+        {
+            case 2:
+                SetRedBackground();
+                break;
+            case 3:
+                SetDarkBackground();
+                break;
+            default:
+                Debug.Log("Unknown wave number!");
+                break;
+        }
+    }
     public void SetBlueBackground()
     {
         RenderSettings.skybox = blueSky;
@@ -53,4 +78,6 @@ public class BackgroundChanger : MonoBehaviour
         sphereMaterial.SetColor("_BgColor", darkFog);
         DynamicGI.UpdateEnvironment();
     }
+
+
 }

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1477321624343608908}
   - component: {fileID: -162753301172011433}
   m_Layer: 0
-  m_Name: bullet
+  m_Name: bullet_old
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -170,4 +170,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   damage: 5
   speed: 2
-  TTL: 10
+  TTL: 5

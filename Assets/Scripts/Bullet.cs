@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == "Player" && tag == "EnemyBullet")
         {
             GameObject player = other.gameObject;
             Player playerScript = player.GetComponent<Player>();
@@ -38,11 +38,23 @@ public class Bullet : MonoBehaviour
         {
             Destroy(gameObject);
         }
-        else if(other.tag == "Enemy")
+        else if(other.tag == "Enemy" && tag == "PlayerBullet")
         {
             GameObject enemy = other.gameObject;
             Enemy enemyScript = enemy.GetComponent<Enemy>(); 
             enemyScript.changeHP(-damage);
+            Destroy(gameObject);
         }
+        else if (other.tag == "EnemyBullet" && tag == "PlayerBullet")
+        {
+            GameObject bullet = other.gameObject;
+            Destroy(bullet);
+            Destroy(gameObject);
+        }
+    }
+
+    public float getSpeed()
+    {
+        return speed;
     }
 }
