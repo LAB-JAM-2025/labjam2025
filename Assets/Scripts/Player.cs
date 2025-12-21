@@ -14,9 +14,12 @@ public class Player : MonoBehaviour
     Timer shootTimer;
     [SerializeField] GameObject screen; // game over
 
+    bool isDead = false;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isDead = false;
         hp = hpMax;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
@@ -33,10 +36,11 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(hp == 0)
+        if(hp == 0 && !isDead)
         {
-            Time.timeScale = 0;
+            isDead = true;
             SoundManager.PlaySoundAtPosition(SoundType.PLAYER_DESTROYED, transform.position);
+            Time.timeScale = 0;
             SoundManager.instance.StopMusic(); 
             screen.SetActive(true);
             Cursor.visible = true;

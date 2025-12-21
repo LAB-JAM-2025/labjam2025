@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: 69846b6d9f5d20b3caba653c64ca2bca
+  - enabled: 1
     path: Assets/Scenes/lashka.unity
     guid: cc903086a08a8344ca72084a01ac0dd2
   m_configObjects:

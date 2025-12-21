@@ -48,6 +48,7 @@ public class Bullet : MonoBehaviour
         else if (other.tag == "EnemyBullet" && tag == "PlayerBullet")
         {
             GameObject bullet = other.gameObject;
+            SoundManager.PlaySoundAtPosition(SoundType.ENEMY_DESTROYED, transform.position);
             Destroy(bullet);
             Destroy(gameObject);
         }
