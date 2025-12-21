@@ -51,7 +51,7 @@ public class CharacterControllerWithCamera : MonoBehaviour
             adjustRotationBySphere(normal);
 
             float yaw = Input.GetAxis("Mouse X") * mouse_sensitivity;
-            adjustRotation(normal, yaw);
+            //adjustRotation(normal, yaw);
 
             Vector3 moveDir = Vector3.zero;
             if (Input.GetKey(KeyCode.W)) moveDir += forward;
@@ -65,8 +65,6 @@ public class CharacterControllerWithCamera : MonoBehaviour
                 moveDir = moveDir.normalized;
                 move(moveDir, normal);
                 RotateCharacter(moveDir);
-
-
             }
             else
             {

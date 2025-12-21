@@ -6,6 +6,7 @@ public class Enemy : MonoBehaviour
     public int hp;
     GameObject sphere;
     GameObject player;
+    BulletSpawner spawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,6 +14,8 @@ public class Enemy : MonoBehaviour
         hp = hpMax;
         sphere = GameObject.FindGameObjectWithTag("Sphere");
         player = GameObject.FindGameObjectWithTag("Player");
+        spawner = GetComponent<BulletSpawner>();
+        spawner.enabled = false;
     }
 
     // Update is called once per frame
@@ -34,11 +37,16 @@ public class Enemy : MonoBehaviour
 
         Vector3 projection = -Vector3.ProjectOnPlane(toPlayer, fromSphere).normalized;
 
-        if (projection != Vector3.zero)
+        if (projection != Vector3.zero && toPlayer.magnitude <= 10)
         {
+            spawner.enabled = true;
             Quaternion targetRotation = Quaternion.LookRotation(projection, fromSphere);
 
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5f);
+        }
+        else
+        {
+            spawner.enabled = false;
         }
     }
 
