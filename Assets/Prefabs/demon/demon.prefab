@@ -909,7 +909,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e3485745e4f75e4e9f7d31ccb6c08de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
-  hpMax: 80
+  hpMax: 2
   hp: 0
 --- !u!136 &4024314975188233652
 CapsuleCollider:
