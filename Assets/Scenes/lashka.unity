@@ -246,8 +246,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
   enemies:
   - {fileID: 5070179838287115855, guid: 78687ccf07a6028489ca9a64ae9067d5, type: 3}
-  spawnInterval: 3
-  distanceFromSphere: 0.5
+  spawnInterval: 1
+  player: {fileID: 1007129197}
+  spawnRadius: 8
+  maxEnemies: 20
 --- !u!1 &66666135
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,7 +821,7 @@ Rigidbody:
     m_Bits: 0
   m_ExcludeLayers:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 0
@@ -937,7 +939,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 63
+    m_Bits: 191
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
