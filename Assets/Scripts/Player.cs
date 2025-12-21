@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Device;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
@@ -11,6 +12,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Image hpBar;
     bool canShoot = true;
     Timer shootTimer;
+    [SerializeField] GameObject screen; // game over
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -21,14 +23,22 @@ public class Player : MonoBehaviour
         shootTimer = new Timer(attackInterval);
     }
 
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+        //screen = GameObject.Find("GameOverPanel");
+        screen.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
         if(hp == 0)
         {
             Time.timeScale = 0;
-            SoundManager.instance.StopMusic();
-            /// TODO: defeat screen
+            SoundManager.instance.StopMusic(); 
+            screen.SetActive(true);
+            Cursor.visible = true;
         }
 
         if(!canShoot)
