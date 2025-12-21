@@ -2,7 +2,7 @@
 - Project name: labjam2025
 - Unity version: Unity 6000.3.2f1
 - Active game object:
-  - Name: SpawnSphere
-  - Tag: Untagged
-  - Layer: Default
+  - Name: demon
+  - Tag: Enemy
+  - Layer: Demons
 <!-- UNITY CODE ASSIST INSTRUCTIONS END -->
