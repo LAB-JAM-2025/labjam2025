@@ -1,5 +1,7 @@
 using UnityEngine;
+using UnityEngine.Device;
 using UnityEngine.InputSystem;
+using UnityEngine.UI;
 
 public class Player : MonoBehaviour
 {
@@ -7,26 +9,41 @@ public class Player : MonoBehaviour
     [SerializeField] int hp;
     [SerializeField] GameObject bullet;
     [SerializeField] float attackInterval = 0.25f;
+    [SerializeField] private Image hpBar;
     bool canShoot = true;
     Timer shootTimer;
+    [SerializeField] GameObject screen; // game over
+
+    bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        isDead = false;
         hp = hpMax;
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
         shootTimer = new Timer(attackInterval);
     }
 
+    private void Awake()
+    {
+        Time.timeScale = 1.0f;
+        //screen = GameObject.Find("GameOverPanel");
+        screen.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        if(hp == 0)
+        if(hp == 0 && !isDead)
         {
+            isDead = true;
+            SoundManager.PlaySoundAtPosition(SoundType.PLAYER_DESTROYED, transform.position);
             Time.timeScale = 0;
-            SoundManager.instance.StopMusic();
-            /// TODO: defeat screen
+            SoundManager.instance.StopMusic(); 
+            screen.SetActive(true);
+            Cursor.visible = true;
         }
 
         if(!canShoot)
@@ -44,6 +61,7 @@ public class Player : MonoBehaviour
             Vector3 spawnPos = pos + fwd;
 
             GameObject newBullet = Instantiate(bullet, spawnPos, transform.rotation);
+            SoundManager.PlaySoundAtPosition(SoundType.PLAYER_BULLET, transform.position);
             newBullet.tag = "PlayerBullet";
             Rigidbody rb = newBullet.GetComponent<Rigidbody>();
             Bullet b = newBullet.GetComponent<Bullet>();
@@ -59,6 +77,9 @@ public class Player : MonoBehaviour
 
     public void changeHP(int value)
     {
+        Debug.Log("Player HP changed by " + hp);
         hp = Mathf.Clamp(hp + value, 0, hpMax);
+        if (hpBar != null)
+            hpBar.fillAmount = (float)hp / hpMax;
     }
 }

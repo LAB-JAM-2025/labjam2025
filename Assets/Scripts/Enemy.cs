@@ -12,6 +12,8 @@ public class Enemy : MonoBehaviour
     public event Action OnDeath;
     EnemySpawner enemySpawner;
 
+    [SerializeField] GameObject healthPack;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -63,8 +65,14 @@ public class Enemy : MonoBehaviour
         hp = Mathf.Clamp(hp + value, 0, hpMax);
         if (hp == 0)
         {
+            if (UnityEngine.Random.Range(0, 101) <= 25)
+                Instantiate(healthPack, transform.position, transform.rotation);
+
+            SoundManager.PlaySoundAtPosition(SoundType.BULLET_DESTROYED, transform.position);
+
             OnEnemyKilled?.Invoke();
             OnDeath?.Invoke();
+            enemySpawner.OnEnemyDeath();
             Destroy(gameObject);
         }
     }

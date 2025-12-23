@@ -3,7 +3,7 @@ Shader "Custom/Checkerboard"
     Properties
     {
         _ColorA ("Color A", Color) = (1,1,1,1)
-        _ColorB ("Color B", Color) = (0,0,0,1)
+        _ColorB ("Color B", Color) = (0.4,0.2,0.1,1)
         _TileSize ("Tile Size", Float) = 10
         _Opacity ("Opacity", Range(0,1)) = 1
     }

@@ -811,6 +811,9 @@ MonoBehaviour:
   hpMax: 100
   hp: 0
   bullet: {fileID: 6321993304753257844, guid: c238e82e73a7a6742a18119b242c3d6a, type: 3}
+  attackInterval: 0.25
+  hpBar: {fileID: 0}
+  screen: {fileID: 0}
 --- !u!54 &1089265362649216619
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1634,6 +1637,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 5574094495289541581, guid: 6bc09453991fff2478e61fefedaa1912, type: 3}
+      propertyPath: 'soundList.Array.data[4]'
+      value: 
+      objectReference: {fileID: 8300000, guid: beb33cdcaf5292a45a4da70a8bdca333, type: 3}
     - target: {fileID: 6056905596054207659, guid: 6bc09453991fff2478e61fefedaa1912, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
