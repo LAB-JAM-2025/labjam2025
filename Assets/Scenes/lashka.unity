@@ -1425,6 +1425,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SceneTransition
       objectReference: {fileID: 0}
+    - target: {fileID: 4999325770053692898, guid: f98d0d64838bb9d46ba5baf03394b877, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 9163417406216133913, guid: f98d0d64838bb9d46ba5baf03394b877, type: 3}
       propertyPath: m_LocalPosition.x
       value: 43.26079

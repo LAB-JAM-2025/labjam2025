@@ -18,7 +18,9 @@ public class ChangeScene : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            changer.LoadLevel(toLoad);
+            if(toLoad == "MainMenu")
+                Cursor.visible = true;
+            changer.NextLevel();
         }
     }
 }

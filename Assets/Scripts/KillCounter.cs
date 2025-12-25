@@ -35,7 +35,7 @@ public class KillCounter : MonoBehaviour
         }
         else if (killCount == 60)
         {
-            changer.LoadLevel("EndGame");
+            changer.NextLevel();
         }
     }
 
